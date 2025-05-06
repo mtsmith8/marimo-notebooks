@@ -29,7 +29,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.image("v1.PNG", width=700, height=500, caption="V1 PVC Tube Setup")
+    mo.image("public/v1.PNG", width=700, height=500, caption="V1 PVC Tube Setup")
     return
 
 
