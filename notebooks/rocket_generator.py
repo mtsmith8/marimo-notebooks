@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.11.7"
+__generated_with = "0.12.8"
 app = marimo.App(width="medium")
 
 
@@ -52,7 +52,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(pl):
-    df = pl.read_csv('rocket-data/first-rocket.csv')
+    df = pl.read_csv('public/rocket-data/first-rocket.csv')
 
     df = df.with_columns(
         pl.when(pl.col("Ch1 (V)") == "undefined")
@@ -241,12 +241,7 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    mo.md(
-        r"""
-        ### Notes on Future Versions
-
-        """
-    )
+    mo.md(r"""### Notes on Future Versions""")
     return
 
 
