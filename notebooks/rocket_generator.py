@@ -51,8 +51,9 @@ def _(mo):
 
 
 @app.cell(hide_code=True)
-def _(pl):
-    df = pl.read_csv('public/rocket-data/first-rocket.csv')
+def _(mo, pl):
+    data_path = mo.notebook_location() / 'public' / 'rocket-data' / 'first-rocket.csv'
+    df = pl.read_csv(str(data_path))
 
     df = df.with_columns(
         pl.when(pl.col("Ch1 (V)") == "undefined")
@@ -63,7 +64,7 @@ def _(pl):
 
     df = df.rename({"Ch1 (V)": "V"})
     df = df.drop_nulls()
-    return (df,)
+    return data_path, df
 
 
 @app.cell(hide_code=True)
