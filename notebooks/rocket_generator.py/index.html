@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <!-- Preload is necessary because we show these images when we disconnect from the server,
+    but at that point we cannot load these images from the server -->
+    <link rel="preload" href="./assets/gradient-yHQUC_QB.png" as="image" />
+    <link rel="preload" href="./assets/noise-60BoTA8O.png" as="image" />
+    <!-- Preload the fonts -->
+    <link rel="preload" href="./assets/Lora-VariableFont_wght-B2ootaw-.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/PTSans-Regular-CxL0S8W7.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/PTSans-Bold-D9fedIX3.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Regular-BTCkDNvf.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Medium-DU3aDxX5.ttf" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="./assets/FiraMono-Bold-CLVRCuM9.ttf" as="font" crossorigin="anonymous" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="a marimo app" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.json" />
+
+    <script data-marimo="true">
+      function __resizeIframe(obj) {
+        var scrollbarHeight = 20; // Max between windows, mac, and linux
+
+        function setHeight() {
+          var element = obj.contentWindow.document.documentElement;
+          // If there is no vertical scrollbar, we don't need to resize the iframe
+          if (element.scrollHeight === element.clientHeight) {
+            return;
+          }
+
+          // Create a new height that includes the scrollbar height if it's visible
+          var hasHorizontalScrollbar = element.scrollWidth > element.clientWidth;
+          var newHeight = element.scrollHeight + (hasHorizontalScrollbar ? scrollbarHeight : 0);
+
+          // Only update the height if it's different from the current height
+          if (obj.style.height !== `${newHeight}px`) {
+            obj.style.height = `${newHeight}px`;
+          }
+        }
+
+        // Resize the iframe to the height of the content and bottom scrollbar height
+        setHeight();
+
+        // Resize the iframe when the content changes
+        const resizeObserver = new ResizeObserver((entries) => {
+          setHeight();
+        });
+        resizeObserver.observe(obj.contentWindow.document.body);
+      }
+    </script>
+    <marimo-filename hidden>notebook.py</marimo-filename>
+    <marimo-mode data-mode='edit' hidden></marimo-mode>
+    <marimo-version data-version='0.12.8' hidden></marimo-version>
+    <marimo-user-config data-config='{"completion": {"activate_on_typing": true, "copilot": false}, "display": {"default_width": "medium", "code_editor_font_size": 14, "dataframes": "rich", "cell_output": "above", "theme": "system"}, "formatting": {"line_length": 79}, "keymap": {"preset": "default", "overrides": {}}, "runtime": {"auto_instantiate": true, "auto_reload": "off", "reactive_tests": true, "on_cell_change": "autorun", "watcher_on_save": "lazy", "output_max_bytes": 8000000, "std_stream_max_bytes": 1000000}, "save": {"autosave": "off", "autosave_delay": 1000, "format_on_save": false}, "package_management": {"manager": "pip"}, "server": {"browser": "default", "follow_symlink": false}, "language_servers": {"pylsp": {"enabled": true, "enable_mypy": true, "enable_ruff": true, "enable_flake8": false, "enable_pydocstyle": false, "enable_pylint": false, "enable_pyflakes": false}}, "snippets": {"custom_paths": [], "include_default_snippets": true}}' data-overrides='{}' hidden></marimo-user-config>
+    <marimo-app-config data-config='{"width": "medium", "sql_output": "auto"}' hidden></marimo-app-config>
+    <marimo-server-token data-token='123' hidden></marimo-server-token>
+    <title>rocket generator</title>
+    <script type="module" crossorigin src="./assets/index-CGFEuydC.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-C9FDJL8i.css">
+  <marimo-wasm hidden=""></marimo-wasm>
+    <script>
+        if (window.location.protocol === 'file:') {
+            alert('Warning: This file must be served by an HTTP server to function correctly.');
+        }
+    </script>
+    
+    <style>
+        #save-button {
+            display: none !important;
+        }
+        #filename-input {
+            display: none !important;
+        }
+    </style>
+    <marimo-code hidden="" data-show-code="false">import%20marimo%0A%0A__generated_with%20%3D%20%220.12.8%22%0Aapp%20%3D%20marimo.App(width%3D%22medium%22)%0A%0A%0A%40app.cell%0Adef%20_()%3A%0A%20%20%20%20import%20marimo%20as%20mo%0A%20%20%20%20import%20polars%20as%20pl%0A%20%20%20%20import%20numpy%20as%20np%0A%20%20%20%20from%20scipy.signal%20import%20find_peaks%0A%20%20%20%20%23import%20matplotlib.pyplot%20as%20plt%0A%20%20%20%20import%20altair%20as%20alt%0A%20%20%20%20return%20alt%2C%20find_peaks%2C%20mo%2C%20np%2C%20pl%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20r%22%22%22%0A%20%20%20%20%20%20%20%20%23%20Experiment%20Data%20Analysis%0A%0A%20%20%20%20%20%20%20%20Horizontal%20tube%20(PVC%20%2F%20Stainless%20Steel)%20layout%20with%20compressed%20air%20propulsion%20or%20rocket%20engine.%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.image(%22v1.PNG%22%2C%20width%3D700%2C%20height%3D500%2C%20caption%3D%22V1%20PVC%20Tube%20Setup%22)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(r%22%22%22%23%23%20Test%20Data%22%22%22)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20r%22%22%22%0A%20%20%20%20%20%20%20%20%23%23%23%20Data%20Read-in%0A%20%20%20%20%20%20%20%20Importing%20CSV%20data%20from%20the%20oscilloscope%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(pl)%3A%0A%20%20%20%20df%20%3D%20pl.read_csv('rocket-data%2Ffirst-rocket.csv')%0A%0A%20%20%20%20df%20%3D%20df.with_columns(%0A%20%20%20%20%20%20%20%20pl.when(pl.col(%22Ch1%20(V)%22)%20%3D%3D%20%22undefined%22)%0A%20%20%20%20%20%20%20%20.then(None)%0A%20%20%20%20%20%20%20%20.otherwise(pl.col(%22Ch1%20(V)%22).cast(pl.Float64%2C%20strict%3DFalse))%0A%20%20%20%20%20%20%20%20.alias(%22Ch1%20(V)%22)%0A%20%20%20%20)%0A%0A%20%20%20%20df%20%3D%20df.rename(%7B%22Ch1%20(V)%22%3A%20%22V%22%7D)%0A%20%20%20%20df%20%3D%20df.drop_nulls()%0A%20%20%20%20return%20(df%2C)%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(r%22%22%22%23%23%23%20Plotting%20the%20Waveform%20Data%22%22%22)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(alt%2C%20df%2C%20mo)%3A%0A%20%20%20%20chart%20%3D%20mo.ui.altair_chart(alt.Chart(df).mark_line(point%3DTrue).encode(%0A%20%20%20%20%20%20%20%20x%3Dalt.X('Time%20(s)%3AQ'%2C%20title%3D%22Seconds%20(s)%22)%2C%0A%20%20%20%20%20%20%20%20y%3Dalt.Y('V%3AQ'%2C%20title%3D%22Volts%20(V)%22)%0A%20%20%20%20).properties(%0A%20%20%20%20%20%20%20%20title%3D%22Voltage%20(V)%20vs%20Time%20(s)%22%0A%20%20%20%20))%0A%0A%20%20%20%20chart%0A%20%20%20%20return%20(chart%2C)%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20r%22%22%22%0A%20%20%20%20%20%20%20%20%23%23%23%20Data%20Analysis%0A%0A%20%20%20%20%20%20%20%20Descriptive%20statistics%2C%20Peak-to-Peak%20Voltage%2C%20and%20RMS%20voltage%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(df%2C%20np%2C%20pl)%3A%0A%20%20%20%20stats%20%3D%20df.select(%5B%0A%20%20%20%20%20%20%20%20%20%20%20%20pl.col(%22V%22).min().alias(%22min%22)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20pl.col(%22V%22).max().alias(%22max%22)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20pl.col(%22V%22).mean().alias(%22mean%22)%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20pl.col(%22V%22).std().alias(%22std%22)%0A%20%20%20%20%5D)%0A%20%20%20%20print(%22Voltage%20Statistics%3A%22)%0A%20%20%20%20print(stats)%0A%0A%20%20%20%20min_voltage%20%3D%20df.select(pl.col(%22V%22).min()).item()%0A%20%20%20%20max_voltage%20%3D%20df.select(pl.col(%22V%22).max()).item()%0A%20%20%20%20peak_to_peak%20%3D%20max_voltage%20-%20min_voltage%0A%0A%20%20%20%20print(f%22Peak-to-Peak%20Voltage%3A%20%7Bpeak_to_peak%7D%20V%22)%0A%0A%20%20%20%20%23%20RMS%20voltage%20gives%20an%20effective%20voltage%20value%20similar%20to%20a%20DC%20voltage%20delivering%20the%20same%20power.%0A%20%20%20%20rms_sq%20%3D%20df.select((pl.col(%22V%22)%20**%202).mean().alias(%22mean_square%22)).item()%0A%20%20%20%20rms_voltage%20%3D%20np.sqrt(rms_sq)%0A%20%20%20%20print(f%22RMS%20Voltage%3A%20%7Brms_voltage%7D%20V%22)%0A%20%20%20%20return%20max_voltage%2C%20min_voltage%2C%20peak_to_peak%2C%20rms_sq%2C%20rms_voltage%2C%20stats%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20r%22%22%22%0A%20%20%20%20%20%20%20%20%23%23%20Power%20Measurements%0A%20%20%20%20%20%20%20%20Extract%20power%20output%20from%20rectified%20test%20setup%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20r%22%22%22%0A%20%20%20%20%20%20%20%20%24P%20%3D%20V%5E2%20%2F%20R%24%0A%0A%20%20%20%20%20%20%20%20Impedance%20matching%20revealed%201.1%20ohm%20load%20is%20optimal.%20%0A%0A%20%20%20%20%20%20%20%20Using%20a%2020%3A1%20voltage%20divider%2C%20so%20all%20voltages%20are%20multiplied%20by%2021.%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(df%2C%20np)%3A%0A%20%20%20%20%23%20Extract%20arrays%20for%20time%20and%20voltage%0A%20%20%20%20time%20%3D%20df%5B%22Time%20(s)%22%5D.to_numpy()%0A%20%20%20%20voltage%20%3D%20df%5B%22V%22%5D.to_numpy()%0A%20%20%20%20resistance%20%3D%201.1%20%20%23%20ohms%0A%20%20%20%20v_divider%20%3D%2021%20%23%2020%3A1%20ratio%0A%0A%20%20%20%20%23%20---%20Power%20Calculations%20---%0A%20%20%20%20power%20%3D%20v_divider%20*%20voltage**2%20%2F%20resistance%0A%20%20%20%20avg_power%20%3D%20np.mean(power)%0A%20%20%20%20max_power%20%3D%20np.max(power)%0A%20%20%20%20v_pp%20%3D%20np.max(voltage)%20-%20np.min(voltage)%0A%20%20%20%20v_rms%20%3D%20np.sqrt(np.mean(voltage%20**%202))%0A%0A%20%20%20%20print(%22Power%20Statistics%3A%22)%0A%20%20%20%20print(f%22%20%20Average%20Power%20%20%20%20%20%20%20%20%3A%20%7Bavg_power%3A.5f%7D%20W%22)%0A%20%20%20%20print(f%22%20%20Max%20Instantaneous%20%20%20%20%3A%20%7Bmax_power%3A.5f%7D%20W%22)%0A%20%20%20%20print(f%22%20%20Peak-to-Peak%20Voltage%20%3A%20%7Bv_pp%3A.5f%7D%20V%22)%0A%20%20%20%20print(f%22%20%20RMS%20Voltage%20%20%20%20%20%20%20%20%20%20%3A%20%7Bv_rms%3A.5f%7D%20V%22)%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%20%20avg_power%2C%0A%20%20%20%20%20%20%20%20max_power%2C%0A%20%20%20%20%20%20%20%20power%2C%0A%20%20%20%20%20%20%20%20resistance%2C%0A%20%20%20%20%20%20%20%20time%2C%0A%20%20%20%20%20%20%20%20v_divider%2C%0A%20%20%20%20%20%20%20%20v_pp%2C%0A%20%20%20%20%20%20%20%20v_rms%2C%0A%20%20%20%20%20%20%20%20voltage%2C%0A%20%20%20%20)%0A%0A%0A%40app.cell(hide_code%3DTrue)%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20r%22%22%22%0A%20%20%20%20%20%20%20%20%23%23%20Velocity%20Calculations%0A%20%20%20%20%20%20%20%20Extract%20data%20to%20calculate%20velocity%20of%20the%20bullet%20passing%20through%20the%20tube%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(find_peaks%2C%20time%2C%20voltage)%3A%0A%20%20%20%20%23%20---%20Detect%20voltage%20peaks%20(first%20peak%20from%20each%20coil%20pulse)%20---%0A%20%20%20%20%23%20Threshold%20and%20distance%20tuned%20for%20this%20waveform%20shape%0A%20%20%20%20peaks%2C%20_%20%3D%20find_peaks(%0A%20%20%20%20%20%20%20%20voltage%2C%0A%20%20%20%20%20%20%20%20height%3D0.1%2C%20%20%20%20%20%20%20%20%23%20increase%20to%20ignore%20small%20peaks%0A%20%20%20%20%20%20%20%20distance%3D100%2C%20%20%20%20%20%20%23%20increase%20to%20enforce%20spacing%0A%20%20%20%20%20%20%20%20prominence%3D0.05%20%20%20%20%23%20increase%20to%20require%20sharper%20peaks%0A%20%20%20%20)%0A%0A%20%20%20%20rocket_mass%20%3D%20190%20%23%20g%0A%0A%20%20%20%20%23%20Extract%20times%20of%20the%20peaks%0A%20%20%20%20peak_times%20%3D%20time%5Bpeaks%5D%0A%0A%20%20%20%20%23%20Ensure%20we%20found%20enough%20peaks%0A%20%20%20%20if%20len(peak_times)%20%3E%3D%202%3A%0A%20%20%20%20%20%20%20%20t_first%20%3D%20peak_times%5B0%5D%20%23%20first%20coil%20peak%0A%20%20%20%20%20%20%20%20t_second%20%3D%20peak_times%5B3%5D%20%23%20second%20coil%20peak%0A%20%20%20%20%20%20%20%20delta_t%20%3D%20t_second%20-%20t_first%0A%20%20%20%20%20%20%20%20coil_spacing%20%3D%200.59%20%20%23%20meters%20between%20two%20coils%0A%20%20%20%20%20%20%20%20velocity%20%3D%20coil_spacing%20%2F%20delta_t%0A%0A%20%20%20%20%20%20%20%20print(%22Velocity%20Estimate%20from%204-Coil%20Peaks%20(based%20on%20two%20peaks%20chosen)%3A%22)%0A%20%20%20%20%20%20%20%20print(f%22%20%20Peak%20Times%20(s)%20%20%20%20%20%20%20%20%3A%20%7Bpeak_times%5B%3A%5D.round(6)%7D%22)%0A%20%20%20%20%20%20%20%20print(f%22%20%20Time%20Between%20Peaks%20%20%20%20%3A%20%7Bdelta_t%3A.6f%7D%20s%22)%0A%20%20%20%20%20%20%20%20print(f%22%20%20Coil%20Spacing%20%20%20%20%20%20%20%20%20%20%3A%20%7Bcoil_spacing%3A.3f%7D%20m%22)%0A%20%20%20%20%20%20%20%20print(f%22%20%20Estimated%20Speed%20%20%20%20%20%20%20%3A%20%7Bvelocity%3A.2f%7D%20m%2Fs%22)%0A%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20print(%22Not%20enough%20peaks%20found%20to%20estimate%20velocity.%22)%0A%20%20%20%20return%20(%0A%20%20%20%20%20%20%20%20coil_spacing%2C%0A%20%20%20%20%20%20%20%20delta_t%2C%0A%20%20%20%20%20%20%20%20peak_times%2C%0A%20%20%20%20%20%20%20%20peaks%2C%0A%20%20%20%20%20%20%20%20rocket_mass%2C%0A%20%20%20%20%20%20%20%20t_first%2C%0A%20%20%20%20%20%20%20%20t_second%2C%0A%20%20%20%20%20%20%20%20velocity%2C%0A%20%20%20%20)%0A%0A%0A%40app.cell%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(r%22%22%22%23%23%20Notes%22%22%22)%0A%20%20%20%20return%0A%0A%0A%40app.cell%0Adef%20_(mo)%3A%0A%20%20%20%20mo.md(%0A%20%20%20%20%20%20%20%20r%22%22%22%0A%20%20%20%20%20%20%20%20%23%23%23%20Notes%20on%20Future%20Versions%0A%0A%20%20%20%20%20%20%20%20%22%22%22%0A%20%20%20%20)%0A%20%20%20%20return%0A%0A%0Aif%20__name__%20%3D%3D%20%22__main__%22%3A%0A%20%20%20%20app.run()%0A</marimo-code></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
